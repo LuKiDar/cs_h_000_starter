@@ -1,0 +1,18 @@
+$medium-column-gutter: map-get($grid-column-gutter, medium);
+$small-column-gutter: map-get($grid-column-gutter, small);
+
+@function header-font-size($breakpoint, $size) {
+    @return rem-calc(map-get(map-get(map-get($header-styles, $breakpoint), $size), 'fs'));
+}
+@function header-line-height($breakpoint, $size) {
+    @return map-get(map-get(map-get($header-styles, $breakpoint), $size), 'lh');
+}
+
+
+@mixin input-placeholder {
+    &.placeholder               {@content}
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}  
+}

@@ -1,0 +1,117 @@
+/**
+ * Typography 
+ */
+
+p {
+    color: inherit;
+
+    &:last-child { margin-bottom: 0 !important; }
+}
+a {
+    color: inherit;
+    transition: all $global_transition;
+    
+    &:before,
+    &:after { transition: all $global_transition; }
+}
+.entry-content a {
+    display: inline-block;
+    position: relative;
+
+    &:before {
+        background: $medium-gray;
+        bottom: 0;
+        content: '';
+        display: inline-block;
+        height: 40%;
+        left: 2px;
+        opacity: .4;
+        position: absolute;
+        right: 2px;
+        z-index: -1;
+    }
+    &:hover {
+        &:before {
+            background: $secondary-color;
+            border-radius: 3px;
+            height: 100%;
+            left: -3px;
+            opacity: 1;
+            right: -3px;
+        }
+    }
+}
+img { height: auto; }
+code {
+    border-radius: $global-radius;
+    font-size: 87.5%;
+}
+kbd { font-size: 87.5%; }
+pre {
+    color: $black;
+    font-family: $font-family-monospace;
+    font-size: 87.5%;
+    margin: 1.5rem 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+q { quotes: '“' '”'; }
+mark {
+    background: rgba(get-color(warning), .5);
+    padding: 1px 4px;
+}
+big { font-size: 125%; }
+address {
+    font-style: italic;
+    margin: 0 0 $paragraph-margin-bottom;
+}
+label {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+/**
+ * Headings 
+ */
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+    margin-bottom: $header-margin-bottom;
+    margin-top: $header-margin-bottom;
+
+    a { color: inherit; }
+}
+
+
+/**
+ * Lists 
+ */
+
+ol, ul {
+    color: inherit;
+    margin-top: $paragraph-margin-bottom;
+    
+    ol, ul {
+        font-size: inherit;
+        margin-bottom: $paragraph-margin-bottom/2;
+        margin-top: $paragraph-margin-bottom/2;
+    }
+}
+dl {
+    margin-bottom: $paragraph-margin-bottom;
+    margin-top: $paragraph-margin-bottom;
+
+    dt { margin-top: rem-calc(10); }
+}
+
+
+/**
+ * Table 
+ */
+

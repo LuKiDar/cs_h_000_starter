@@ -1,0 +1,71 @@
+/**
+ * Animations
+ */
+
+
+/*** Loader spinner ***/
+$spinnerAnimation: 0.75s;
+.loader-spinner {
+    animation: cs__spin $spinnerAnimation infinite linear;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    border-top-color: $primary-color;
+    display: inline-block;
+    height: 30px;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease-out;
+    width: 30px;
+    z-index: 30;
+
+    &::before {
+        animation: cs__spin $spinnerAnimation*2 infinite ease;
+        border: inherit;
+        border-radius: inherit;
+        content: '';
+        display: inline-block;
+        height: inherit;
+        left: -2px;
+        position: absolute;
+        top: -2px;
+        width: inherit;
+    }
+}
+
+@keyframes cs__spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/*** Animated blocks ***/
+$animatedBlockSpeed: 0.8s;
+$animatedBlockDelay: 0.2s;
+$animatedBlockShift: 30px;
+.animated-block {
+    backface-visibility: visible;
+    opacity: 0;
+    transition: opacity $animatedBlockSpeed ease-in-out, transform $animatedBlockSpeed ease-in-out;
+    transition-delay: 0s;
+    
+    &.ab-2 { transition-delay: $animatedBlockDelay; }
+    &.ab-3 { transition-delay: $animatedBlockDelay*2; }
+    &.ab-4 { transition-delay: $animatedBlockDelay*3; }
+    &.ab-5 { transition-delay: $animatedBlockDelay*4; }
+    &.ab-6 { transition-delay: $animatedBlockDelay*5; }
+    &.ab-7 { transition-delay: $animatedBlockDelay*6; }
+    &.ab-slide-bottom { transform: translate(0, $animatedBlockShift); }
+    &.ab-slide-left { transform: translate(-$animatedBlockShift, 0); }
+    &.ab-slide-right { transform: translate($animatedBlockShift, 0); }
+    &.ab-slide-top { transform: translate(0, -$animatedBlockShift); }
+    &.ab-visible {
+        opacity: 1;
+
+        &.ab-slide-bottom,
+        &.ab-left,
+        &.ab-right,
+        &.ab-slide-top {transform: translate(0, 0); }
+    }
+}

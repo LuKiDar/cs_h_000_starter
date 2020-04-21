@@ -1,0 +1,50 @@
+/**
+ * WP classes 
+ */
+
+.alignnone {
+    clear: both;
+    display: block;
+    margin: 1.5rem 0;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: .375rem auto 1.5rem;
+}
+.alignleft {
+    float: left !important;
+    margin: .375rem 1.5rem 1.5rem 0;
+}
+.alignright {
+    float: right !important;
+    margin: .375rem 0 1.5rem 1.5rem;
+}
+.wp-caption {
+    max-width: 100% !important;
+    overflow: hidden;
+    text-align: center;
+    
+    p:first-child { margin: 0; }
+}
+.wp-caption-text,
+.wp-caption-dd {
+    color: $dark-gray;
+    font-size: rem-calc(13);
+    padding: 10px 0;
+}
+/*.gallery-caption {}
+.sticky {}
+.bypostauthor {}
+.edit_link {
+    display: inline-block;
+    margin: 20px 0;
+    
+    .post-edit-link {
+        //@extend %btn;
+        //background-color: $black !important;
+
+        //&:hover,
+        //&:focus { background: $white !important; }
+    }
+}*/
