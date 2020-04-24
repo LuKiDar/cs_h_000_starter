@@ -3,43 +3,24 @@
  */
 
  %btn {
-    background-color: transparent;
-    border: 2px solid transparent;
-    border-radius: 0;
-    color: $white;
-    cursor: pointer;
-    display: inline-block;
-    font-size: rem-calc(14);
+    border-width: 1px;
     font-weight: $global-weight-normal;
-    letter-spacing: 0.5px;
     line-height: rem-calc(21);
-    margin: 0;
-    min-width: 70px;
+    min-width: 100px;
     outline: none;
-    padding: 5px 10px;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    transition: all $global_transition;
 
-    @include breakpoint(medium down) {
-        font-size: rem-calc(13);
-        padding: 2px 5px;
-    }
+    @include breakpoint(medium down) {}
 
     &:hover,
-    &:focus {
-        background: transparent;
-        color: $white;
-        text-decoration: none;
-    }
+    &:focus { color: $white; }
 }
-input[type=submit] {
+.button {
     @extend %btn;
+
+    border-color: $primary-color;
         
     &:hover,
-    &:focus {
-    }
+    &:focus {}
 }
 
 
