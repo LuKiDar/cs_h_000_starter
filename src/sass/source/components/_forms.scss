@@ -49,7 +49,6 @@ select {
     margin: 0;
     outline: none;
 
-    &[multiple] { height: auto; }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
@@ -58,9 +57,7 @@ select {
         box-shadow: inset 0 0 0 50px $body-background;
         -webkit-text-fill-color: $input-color;
     }
-    &:focus {
-        border-bottom: 1px solid $dark-gray;
-    }
+    &:focus { border-bottom: 1px solid $dark-gray; }
 }
 [type=color],
 [type=date],
@@ -80,17 +77,26 @@ select {
 }
 select {
     height: 35px;
+	
+    &[multiple] { height: auto; }
+    &:invalid { color: $input-placeholder-color; }
 
     option {
         font-size: inherit;
         font-weight: inherit;
+		
+		&:not(:first-of-type) { color: $input-color; }
     }
 }
 select[multiple] {
     background: transparent;
 }
 textarea {
+    border-radius: $input-radius;
     height: 100px;
-    padding: 5px 0;
+    line-height: $global-lineheight;
+    padding: $input-padding;
     resize: none;
+
+    &[rows] { height: 100px; }
 }
